@@ -1,0 +1,31 @@
+# Mac metadata files
+.DS_Store
+
+#IntelliJ files
+.idea
+
+# Compiled python files
+*.py[cod]
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info
+eggs
+parts
+var
+sdist
+develop-eggs
+.installed.cfg
+__pycache__
+
+# Installer logs
+pip-log.txt
+
+.pytest_cache
+
+# Other
+.cache
+

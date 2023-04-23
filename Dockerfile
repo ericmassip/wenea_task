@@ -1,4 +1,4 @@
-FROM python:3.9-alpine
+FROM python:3.9
 
 ENV PYTHONDONTWRITEBYTECODE 1  # Prevents Python from writing pyc files to disc
 ENV PYTHONUNBUFFERED 1  # Ensures our console output is not buffered by Docker, but is logged directly

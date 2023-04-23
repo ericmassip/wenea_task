@@ -55,10 +55,9 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'wenea.urls'
 
 REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
+    # For simplicity, allow any request (including from the browsable API)
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticatedOrReadOnly'
+        'rest_framework.permissions.AllowAny',
     ]
 }
 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Charge points lobby</title>
+</head>
+<body>
+    <h1>Charge points lobby!</h1>
+    <div id="messages"></div>
+
+    <script>
+        const chatSocket = new WebSocket('ws://' + window.location.host + '/ws/chargepoints-lobby/');
+
+        chatSocket.onmessage = function(e) {
+            {# Insert every message received by the websocket in the messages div in a new line. #}
+            const data = JSON.parse(e.data);
+            let messages = document.getElementById("messages");
+            messages.insertAdjacentHTML("beforeend", `<div><p>${data.message}</p></div>`)
+        };
+
+        chatSocket.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+    </script>
+</body>
+</html>

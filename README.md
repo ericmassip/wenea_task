@@ -26,6 +26,22 @@ following command:
 
     docker-compose up
 
+### Set up database
+
+After successfully deploying the app, you'll see a message from the web service saying that the database is not set up, 
+because there are unapplied migrations. To apply the migrations, run the following command:
+
+    docker-compose run --rm web python manage.py migrate
+
+### Create a superuser
+
+In order to be able to open the Django admin, you need to create a superuser. To do so, run the following command:
+
+    docker-compose run --rm web python manage.py createsuperuser
+
+Then, you can open the admin in http://localhost:8000/admin/. Create some charge points and you'll be able to see them
+in the API.
+
 ### API
 
 The API endpoints will be available under http://localhost:8000/api/01/. You can test the endpoints using the 
